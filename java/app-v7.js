@@ -653,7 +653,7 @@ ytproAudElem.style.pointerEvents="auto";
 ytproDownVidElem.style.opacity="1";
 ytproDownVidElem.style.pointerEvents="auto";
 }
-}
+
 
 /*Watch The old and New URL*/
 if(ytoldV != (new URLSearchParams(window.location.search)).get('v')){
