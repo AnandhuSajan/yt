@@ -639,7 +639,24 @@ align-items:center;justify-content:center;padding-left:20px;padding-right:20px;
 `);
 ytproMainDivA.appendChild(ytproMainDiv);
 
-}
+
+
+
+
+/*Music Button*/
+var ytproAudElem=document.createElement("div");
+sty(ytproAudElem);
+ytproAudElem.style.width="90px";
+ytproAudElem.innerHTML=`
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${c}" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"/>
+</svg>
+<span style="margin-left:8px">Enjoy Audio Background<span>`;
+ytproMainDiv.appendChild(ytproAudElem);
+ytproAudElem.addEventListener("click",
+function(){
+ytproAudPlayer();
+});
 
 if(ytprof1.length =="" && ytprov1.length ==""){
 ytproAudElem.style.opacity=".5";
