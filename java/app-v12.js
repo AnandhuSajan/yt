@@ -603,8 +603,6 @@ Android.downvid((o.getAttribute("data-ytprotit")+ex),o.getAttribute("data-ytprou
 }
 
 
-
-
 /*THE 0NE AND 0NLY FUNCTION*/
 function pkc(){
 
@@ -670,6 +668,7 @@ window.location.href=window.location.href;
 }
 
 }
+
 
 
 
