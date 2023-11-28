@@ -437,12 +437,8 @@ color:black;
 }
 
 </style>`;
-ytpSetI.innerHTML+=`<b style='font-size:18px' >YT PRO Settings</b>
-<span style="font-size:10px">v${YTProVer}</span>
-<br><br>
-<div><input type="url" placeholder="Enter Youtube URL" onkeyup="searchUrl(this,event)"></div>
-<br>
-<div style="text-align:center" ><button onclick="alert('Coming Soon...');">Hearted Videos</button><button style="margin-left:10px" onclick="${(parseInt(Android.getInfo()) < parseInt(2.4)) ? "alert('New version available.\\n\\nPlease Update Your YT PRO')" : "alert('YT PRO is upto date');"}">Check for Updates</button></div>
+ytpSetI.innerHTML+=`<b style='font-size:18px' >Youtube Premium Settings</b>
+<span style="font-size:10px">v5.1</span>
 <br>
 <div>Autoskip Sponsors <span onclick="sttCnf(this,'autoSpn');" style="${sttCnf(0,0,"autoSpn")}" ><b style="${sttCnf(0,1,"autoSpn")}"></b></span></div>
 <br>
@@ -451,7 +447,7 @@ ytpSetI.innerHTML+=`<b style='font-size:18px' >YT PRO Settings</b>
 <div style="display:flex;justify-content:center;font-family:cursive;text-align:center;font-size:22px;font-weight:bolder;color:#0f8;">Made by Anandhu Sajan
 </div>
 <br><br>
-<div style="font-size:13px;"><b style="font-weight:bold">Disclaimer</b>: This is an Unofficial  Youtube Modified Application, All the logos and brands are property of Google LLC.<br>
+<div style="font-size:13px;"><b style="font-weight:bold">Disclaimer</b>: This is an Unofficial  Youtube Modified Application, All the logos and brands are property of Google LLC.<br> ThankYou :)
 </div>`;
 
 document.body.appendChild(ytpSet);
