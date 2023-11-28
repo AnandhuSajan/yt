@@ -603,24 +603,6 @@ Android.downvid((o.getAttribute("data-ytprotit")+ex),o.getAttribute("data-ytprou
 }
 
 
-/*THE 0NE AND 0NLY FUNCTION*/
-function pkc(){
-
-if(window.location.href.indexOf("youtube.com/watch") > -1){
-
-try{
-var elm=document.getElementsByTagName('ytm-segmented-like-dislike-button-renderer')[0].getElementsByTagName("ytm-toggle-button-renderer")[1];
-elm.children[0].children[0].style.position="absolute";
-elm.children[0].children[0].style.left="10px";
-elm.children[0].style.width="80px";
-if(elm.children[0].children[2] == null){
-elm.children[0].innerHTML+=`<span style="margin-left:20px">${dislikes}<span>`;
-}
-else{
-elm.children[0].children[2].innerHTML=dislikes;
-}
-}catch{}
-
 
 /*Check If Element Already Exists*/
 if(document.getElementById("ytproMainDivE") == null){
