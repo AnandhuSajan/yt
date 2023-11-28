@@ -605,7 +605,71 @@ Android.downvid((o.getAttribute("data-ytprotit")+ex),o.getAttribute("data-ytprou
 
 
 
+/*THE 0NE AND 0NLY FUNCTION*/
+function pkc(){
 
+if(window.location.href.indexOf("youtube.com/watch") > -1){
+
+try{
+var elm=document.getElementsByTagName('ytm-segmented-like-dislike-button-renderer')[0].getElementsByTagName("ytm-toggle-button-renderer")[1];
+elm.children[0].children[0].style.position="absolute";
+elm.children[0].children[0].style.left="10px";
+elm.children[0].style.width="80px";
+if(elm.children[0].children[2] == null){
+elm.children[0].innerHTML+=`<span style="margin-left:20px">${dislikes}<span>`;
+}
+else{
+elm.children[0].children[2].innerHTML=dislikes;
+}
+}catch{}
+
+
+/*Check If Element Already Exists*/
+if(document.getElementById("ytproMainDivE") == null){
+var ytproMainDivA=document.createElement("div");
+ytproMainDivA.setAttribute("id","ytproMainDivE");
+ytproMainDivA.setAttribute("style",`
+height:50px;width:100%;display:block;overflow:auto;
+`);
+
+insertAfter(document.getElementsByClassName('slim-video-action-bar-actions')[0],ytproMainDivA);
+
+var ytproMainDiv=document.createElement("div");
+ytproMainDiv.setAttribute("style",`
+height:50px;width:100%;display:flex;overflow:auto;
+align-items:center;justify-content:center;padding-left:20px;padding-right:20px;
+`);
+ytproMainDivA.appendChild(ytproMainDiv);
+
+
+
+
+if(ytprof1.length =="" && ytprov1.length ==""){
+ytproAudElem.style.opacity=".5";
+ytproAudElem.style.pointerEvents="none";
+ytproDownVidElem.style.opacity=".5";
+ytproDownVidElem.style.pointerEvents="none";
+}
+else if(ytprof1.length !="" && ytprov1.length !=""){
+ytproAudElem.style.opacity="1";
+ytproAudElem.style.pointerEvents="auto";
+ytproDownVidElem.style.opacity="1";
+ytproDownVidElem.style.pointerEvents="auto";
+}
+}
+
+/*Watch The old and New URL*/
+if(ytoldV != (new URLSearchParams(window.location.search)).get('v')){
+try{document.getElementById("ytproMainAudDivE").remove();}catch{console.log("No Element Found");}
+isAPlaying=false;
+ytoldV=(new URLSearchParams(window.location.search)).get('v');
+window.location.href=window.location.href;
+}
+
+
+}
+
+}
 
 
 
