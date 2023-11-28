@@ -639,8 +639,7 @@ align-items:center;justify-content:center;padding-left:20px;padding-right:20px;
 `);
 ytproMainDivA.appendChild(ytproMainDiv);
 
-
-
+}
 
 if(ytprof1.length =="" && ytprov1.length ==""){
 ytproAudElem.style.opacity=".5";
