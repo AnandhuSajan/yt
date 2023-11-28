@@ -639,7 +639,8 @@ align-items:center;justify-content:center;padding-left:20px;padding-right:20px;
 `);
 ytproMainDivA.appendChild(ytproMainDiv);
 
-}
+
+
 
 if(ytprof1.length =="" && ytprov1.length ==""){
 ytproAudElem.style.opacity=".5";
@@ -653,7 +654,7 @@ ytproAudElem.style.pointerEvents="auto";
 ytproDownVidElem.style.opacity="1";
 ytproDownVidElem.style.pointerEvents="auto";
 }
-
+}
 
 /*Watch The old and New URL*/
 if(ytoldV != (new URLSearchParams(window.location.search)).get('v')){
