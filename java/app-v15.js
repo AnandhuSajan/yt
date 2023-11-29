@@ -440,8 +440,6 @@ color:black;
 ytpSetI.innerHTML+=`<b style='font-size:18px' >Youtube Premium Settings</b>
 <span style="font-size:10px">v5.1</span>
 <br>
-<div>Autoskip Sponsors <span onclick="sttCnf(this,'autoSpn');" style="${sttCnf(0,0,"autoSpn")}" ><b style="${sttCnf(0,1,"autoSpn")}"></b></span></div>
-<br>
 <div>Force Zoom <span onclick="sttCnf(this,'fzoom');" style="${sttCnf(0,0,"fzoom")}" ><b style="${sttCnf(0,1,"fzoom")}" ></b></span></div> 
 <br>
 <div style="display:flex;justify-content:center;font-family:cursive;text-align:center;font-size:22px;font-weight:bolder;color:#0f8;">Made by Anandhu Sajan
