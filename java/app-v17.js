@@ -3,7 +3,7 @@ Author: Anandhu Sajan
 Version: 5.1
 */
 
-var YTProVer="3.1";
+var YTProVer="5.1";
 if(ytprof1 == undefined && ytprov1 == undefined){
 var ytprof1="";
 var ytprov1="";
@@ -437,7 +437,7 @@ color:black;
 }
 
 </style>`;
-ytpSetI.innerHTML+=`<b style='font-size:18px' >YT PRO Settings</b>
+ytpSetI.innerHTML+=`<b style='font-size:18px' >Youtube Premium Settings</b>
 <span style="font-size:10px">v${YTProVer}</span>
 <br>
 <div>Autoskip Sponsors <span onclick="sttCnf(this,'autoSpn');" style="${sttCnf(0,0,"autoSpn")}" ><b style="${sttCnf(0,1,"autoSpn")}"></b></span></div>
