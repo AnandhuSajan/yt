@@ -3,7 +3,7 @@ Author: Anandhu Sajan
 Version: 5.1
 */
 
-var YTProVer="5.1";
+var YTProVer="3.1";
 if(ytprof1 == undefined && ytprov1 == undefined){
 var ytprof1="";
 var ytprov1="";
@@ -437,15 +437,17 @@ color:black;
 }
 
 </style>`;
-ytpSetI.innerHTML+=`<b style='font-size:18px' >Youtube Premium Settings</b>
-<span style="font-size:10px">v5.1</span>
+ytpSetI.innerHTML+=`<b style='font-size:18px' >YT PRO Settings</b>
+<span style="font-size:10px">v${YTProVer}</span>
+<br>
+<div>Autoskip Sponsors <span onclick="sttCnf(this,'autoSpn');" style="${sttCnf(0,0,"autoSpn")}" ><b style="${sttCnf(0,1,"autoSpn")}"></b></span></div>
 <br>
 <div>Force Zoom <span onclick="sttCnf(this,'fzoom');" style="${sttCnf(0,0,"fzoom")}" ><b style="${sttCnf(0,1,"fzoom")}" ></b></span></div> 
 <br>
-<div style="display:flex;justify-content:center;font-family:cursive;text-align:center;font-size:22px;font-weight:bolder;color:#0f8;">Made by Anandhu Sajan
+<div style="display:flex;justify-content:center;font-family:cursive;text-align:center;font-size:22px;font-weight:bolder;color:#0f8;">Made By Anandhu Sajan
 </div>
 <br><br>
-<div style="font-size:13px;"><b style="font-weight:bold">Disclaimer</b>: This is an Unofficial  Youtube Modified Application, All the logos and brands are property of Google LLC.<br><br> ThankYou :)
+<div style="font-size:13px;"><b style="font-weight:bold">Disclaimer</b>: This is an Unofficial Youtube Mod app, All the logos and brands are property of Google LLC.<br>ThankYou :) <br>
 </div>`;
 
 document.body.appendChild(ytpSet);
@@ -637,9 +639,49 @@ align-items:center;justify-content:center;padding-left:20px;padding-right:20px;
 `);
 ytproMainDivA.appendChild(ytproMainDiv);
 
+/*Heart Button*/
+var ytproFavElem=document.createElement("div");
+sty(ytproFavElem);
+if(!isHeart()){
+ytproFavElem.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${c}" viewBox="0 0 16 16">
+<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+</svg><span style="margin-left:8px">Heart<span>`;
+}else{
+ytproFavElem.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f00" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg><span style="margin-left:8px">Heart<span>`;
+}
+ytproMainDiv.appendChild(ytproFavElem);
+ytproFavElem.addEventListener("click",()=>{ytProHeart(ytproFavElem);});
 
 
 
+/*Download Button*/
+var ytproDownVidElem=document.createElement("div");
+sty(ytproDownVidElem);
+ytproDownVidElem.style.width="110px";
+ytproDownVidElem.innerHTML=`${downBtn}<span style="margin-left:8px">Download<span>`;
+ytproMainDiv.appendChild(ytproDownVidElem);
+ytproDownVidElem.addEventListener("click",
+function(){
+window.location.hash="download";
+});
+
+/*PIP Button*/
+var ytproPIPVidElem=document.createElement("div");
+sty(ytproPIPVidElem);
+ytproPIPVidElem.style.width="110px";
+ytproPIPVidElem.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${c}"  viewBox="0 0 16 16">
+<path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+<path d="M8 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-3z"/>
+</svg>
+<span style="margin-left:8px">PIP Mode<span>`;
+ytproMainDiv.appendChild(ytproPIPVidElem);
+ytproPIPVidElem.addEventListener("click",
+function(){
+isAP=false;
+PIPlayer2();
+});
 
 /*Music Button*/
 var ytproAudElem=document.createElement("div");
@@ -649,7 +691,7 @@ ytproAudElem.innerHTML=`
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${c}" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"/>
 </svg>
-<span style="margin-left:8px">Enjoy Audio Background<span>`;
+<span style="margin-left:8px">BG Play<span>`;
 ytproMainDiv.appendChild(ytproAudElem);
 ytproAudElem.addEventListener("click",
 function(){
@@ -684,7 +726,32 @@ window.location.href=window.location.href;
 }
 
 
+function ytProHeart(x){
 
+var vid=(new URLSearchParams(window.location.search)).get('v');
+if(localStorage.getItem("vids")?.indexOf(vid) > -1){
+var ritem=localStorage.getItem("vids");
+ritem=ritem.substr(0,(ritem?.indexOf(vid)-1))+ritem.substr((ritem?.indexOf(vid)+vid.length),ritem.length);
+localStorage.setItem("vids",ritem);
+x.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${c}" viewBox="0 0 16 16">
+<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+</svg><span style="margin-left:8px">Heart<span>`;
+}else{
+localStorage.setItem("vids",localStorage.getItem("vids")+","+(new URLSearchParams(window.location.search)).get('v'));
+x.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f00" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg><span style="margin-left:8px">Heart<span>`;
+}
+}
+
+
+function isHeart(){
+if(localStorage.getItem("vids")?.indexOf((new URLSearchParams(window.location.search)).get('v')) > -1){
+return true;
+}else{
+return false;
+}
+}
 
 function removePIP(){
 if(!isF){
